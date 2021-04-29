@@ -19,8 +19,8 @@ U = orth(rand(para.size1));
 para.Sigma_g = U' * D * U;
 
 build_sigma()
-para.SIGMA = SIGMA + eye(para.P*para.Q*para.LT*para.LR) * 0.01;
-para.inv_SIGMA = inv(para.SIGMA);
+para.SIGMA = SIGMA;
+SIGMA = SIGMA + eye(P*Q*LT*LR) * 0.01;
 
 % construt initial x
 para.x0 = exp(2*pi*1i*rand(para.LT * para.P,1));
@@ -28,8 +28,11 @@ para.X0 = kron(eye(para.Q*para.LR),para.x0);
 
 
 %% Applying Algorithms
+[X_acc_CMC,MI_acc_CMC] = MM_SQUAREM(para,'CMC');
 
 [X_MM_CMC,MI_MM_CMC,~] = MM_MI(para,'CMC');
+hold on 
+plot(MI_MM_CMC)
 [X_acc_CMC,MI_acc_CMC] = MM_SQUAREM(para,'CMC');
 
 

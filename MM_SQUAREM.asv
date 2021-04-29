@@ -1,6 +1,6 @@
 function [X,MI] = MM_SQUAREM(para, mode)
     %% Initialization
-    global m LT LR Q P sigma constant P_max SIGMA inv_SIGMA
+    global m LT LR Q P sigma constant P_max SIGMA
     m = para.m;
     LT = para.LT;
     LR = para.LR;
@@ -8,7 +8,7 @@ function [X,MI] = MM_SQUAREM(para, mode)
     P = para.P;
     sigma = para.sigma;
     SIGMA = para.SIGMA;
-    inv_SIGMA = para.inv_SIGMA;
+    inv_SIG
     constant = para.constant;
     P_max = para.P_max;
 

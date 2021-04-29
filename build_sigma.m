@@ -1,8 +1,8 @@
 global Q; Q = para.Q;
 global P; P = para.P;
 global m; m = para.m;
-global LR; LR = 4;
-global LT; LT = 4;
+global LR; LR = para.LR;
+global LT; LT = para.LT;
 size1 = P*Q*m;
 % D = diag(rand(size1,1));
 % U = orth(rand(size1));
